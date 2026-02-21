@@ -56,10 +56,10 @@ export default function Hero() {
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-bold text-off-white tracking-tight uppercase mb-2">
-                        Krishna Patel
+                        John Doe
                     </h1>
                     <h2 className="text-2xl md:text-4xl text-slate font-light tracking-wide mb-6">
-                        Aerospace Engineer
+                        Lead Engineer
                     </h2>
 
                     <div className="flex items-center gap-4 mb-10 overflow-hidden">
@@ -70,7 +70,7 @@ export default function Hero() {
                             transition={{ delay: 0.4, duration: 0.6 }}
                             className="text-cyan/80 text-lg uppercase tracking-widest"
                         >
-                            Mechanical → Aerospace Journey
+                            Skillset → Specialization
                         </motion.p>
                     </div>
 

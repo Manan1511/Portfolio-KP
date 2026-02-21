@@ -61,18 +61,18 @@ export default function JournalRoadmap() {
 
                     <JournalEntry
                         date="LOG ENTRY: 094"
-                        title="The 40,000 RPM Catastrophe"
-                        content="Testing a 3D printed impeller at full RPM resulted in rapid unplanned disassembly. The resin wasn't cured uniformly, introducing microscopic stress concentrators. Lesson learned: SLA prints need strict thermal curing profiles if they are anywhere near the rotational path. Re-designing with continuous carbon fiber inlay and a better balancing rig."
+                        title="Investigation Alpha: System Failure"
+                        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     />
                     <JournalEntry
                         date="LOG ENTRY: 081"
-                        title="Convergence Failure in Fluent"
-                        content="Spent three days fighting residuals in Ansys Fluent. The combustion simulation kept diverging at the nozzle throat. Turns out using a k-epsilon model in a highly compressible shear layer was a conceptual error. Switching to a k-omega SST model and refining the boundary layer mesh solved the divergence immediately."
+                        title="Process Beta: Optimization"
+                        content="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                     />
                     <JournalEntry
                         date="LOG ENTRY: 062"
-                        title="Weight vs. Rigidity"
-                        content="In early drone frame designs, I prioritized absolute weight reduction, which led to high-frequency resonance destroying the flight controller's gyro readings. Sometimes adding 15 grams of strategically placed bracing saves you from writing 2,000 lines of complex filtering code. Physics first, software second."
+                        title="Study Gamma: Value vs Output"
+                        content="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
                     />
                 </motion.div>
 
@@ -99,26 +99,26 @@ export default function JournalRoadmap() {
                     <div className="ml-2">
                         <TimelineNode
                             status="completed"
-                            title="B.S. Mechanical Engineering"
-                            desc="Built core foundation in mechanics, thermodynamics, and manufacturing."
+                            title="Foundation Degree Program"
+                            desc="Built core knowledge base in primary scientific or analytical disciplines."
                             date="T-MINUS 2 YRS"
                         />
                         <TimelineNode
                             status="in-progress"
-                            title="M.S. Aerospace Engineering"
-                            desc="Specializing in propulsion systems and advanced composite structures."
+                            title="Advanced Specialization Level"
+                            desc="Focusing on complex system architectures and upper-level applications."
                             date="CURRENT"
                         />
                         <TimelineNode
                             status="future"
-                            title="Propulsion Engineer Role"
-                            desc="Targeting hardware-rich aerospace startups testing novel engine architectures."
+                            title="Primary Engineering Role"
+                            desc="Targeting fast-paced environments focused on aggressive iteration and design."
                             date="T-PLUS 1 YR"
                         />
                         <TimelineNode
                             status="future"
-                            title="Orbital Delivery Systems"
-                            desc="Leading sub-team designing payload integration mechanisms for LEO launch vehicles."
+                            title="Leadership & Systems Design"
+                            desc="Leading development teams architecting broad-scope integration payloads."
                             date="T-PLUS 3 YRS"
                         />
                     </div>

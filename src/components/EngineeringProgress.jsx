@@ -62,17 +62,17 @@ export default function EngineeringProgress() {
                     </div>
 
                     <SystemMeter
-                        label="Current Status : Learning & Building"
+                        label="Current Status : Developing & Iterating"
                         value={85}
                         colorClass={{ text: "text-cyan", bg: "bg-cyan" }}
                     />
                     <SystemMeter
-                        label="Core Focus : Propulsion & FEA"
+                        label="Core Focus : Primary Skillset"
                         value={72}
                         colorClass={{ text: "text-orange", bg: "bg-orange" }}
                     />
                     <SystemMeter
-                        label="Long-term : Hard Hardware"
+                        label="Long-term : Advanced Systems"
                         value={100}
                         colorClass={{ text: "text-off-white", bg: "bg-off-white" }}
                     />
@@ -92,23 +92,23 @@ export default function EngineeringProgress() {
                         <TagDisplay
                             title="Fundamentals"
                             tags={[
-                                "Mechanics",
-                                "Thermodynamics",
-                                "Strength of Materials",
-                                "Fluid Dynamics",
-                                "Heat Transfer"
+                                "Core Subject A",
+                                "Core Subject B",
+                                "Principle Topic C",
+                                "Advanced Theory D",
+                                "Applied Science E"
                             ]}
                         />
 
                         <TagDisplay
                             title="Technical Stack"
                             tags={[
-                                "CAD / SolidWorks",
-                                "ANSYS (FEA)",
-                                "MATLAB",
-                                "Python",
-                                "AutoCAD",
-                                "Excel / VBA"
+                                "Primary Tool",
+                                "Secondary Tool",
+                                "Software Stack",
+                                "Language A",
+                                "Language B",
+                                "Framework X"
                             ]}
                         />
                     </div>

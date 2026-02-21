@@ -56,31 +56,29 @@ const ExplodedViewSlider = () => {
             ref={containerRef}
             onPointerDown={handlePointerDown}
         >
-            {/* Background: Exploded View (Wireframe/Technical placeholder) */}
-            <div className="absolute inset-0 bg-deep-space flex flex-col items-center justify-center p-4">
-                {/* Placeholder for exploded CAD */}
-                <div className="relative w-full h-full border border-orange/20 rounded grid grid-cols-3 grid-rows-3 gap-2 p-2">
-                    <div className="col-start-2 border-t-2 border-orange/50"></div>
-                    <div className="row-start-2 col-start-1 border-l-2 border-orange/50"></div>
-                    <div className="row-start-2 col-start-3 border-r-2 border-orange/50"></div>
-                    <div className="row-start-3 col-start-2 border-b-2 border-orange/50"></div>
-                    <div className="absolute inset-0 flex items-center justify-center -translate-y-4">
-                        <span className="text-orange/60 font-mono text-xs rotate-[-15deg] uppercase tracking-widest border border-orange/30 p-1">Exploded Assembly</span>
-                    </div>
-                </div>
+            {/* Background: Exploded View (Blueprint) */}
+            <div className="absolute inset-0 bg-[#0f172a] flex items-center justify-center">
+                <img
+                    src="/assets/exploded.png"
+                    alt="Exploded Assembly Blueprint"
+                    className="w-full h-full object-cover object-center opacity-90 mix-blend-screen pointer-events-none"
+                    draggable="false"
+                />
             </div>
 
-            {/* Foreground: Assembled View (Solid placeholder) */}
+            {/* Foreground: Assembled View (Render) */}
             <div
-                className="absolute inset-0 bg-slate-900 border-r border-cyan shadow-[2px_0_10px_rgba(0,212,255,0.5)] flex items-center justify-center"
-                style={{ width: `${sliderPosition}%` }}
+                className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
             >
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800 to-black overflow-hidden flex items-center justify-center">
-                    {/* Placeholder for assembled part */}
-                    <div className="w-1/2 h-1/2 bg-slate-700 rounded-sm shadow-2xl skew-x-[-10deg] flex items-center justify-center">
-                        <span className="text-slate/50 font-mono text-xs uppercase tracking-widest">Assembled State</span>
-                    </div>
-                </div>
+                <img
+                    src="/assets/assembled.png"
+                    alt="Assembled Hardware State"
+                    className="w-full h-full object-cover object-center pointer-events-none"
+                    draggable="false"
+                />
+                {/* Border effect since clipPath removes structural borders */}
+                <div className="absolute inset-0 border-r-2 border-cyan shadow-[2px_0_10px_rgba(0,212,255,0.5)] w-full transition-all" />
             </div>
 
             {/* Slider Handle */}
@@ -149,7 +147,7 @@ export default function AerospaceProjects() {
                         <span className="text-cyan font-mono text-xs uppercase tracking-[0.2em]">R&D / Mini Projects</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold text-off-white uppercase tracking-tight">
-                        Aerospace Curiosity <br />
+                        Domain Curiosity <br />
                         <span className="text-slate focus-within:text-off-white transition-colors block mt-2 text-2xl font-light">
                             Testing boundaries. Failing safely.
                         </span>
@@ -161,9 +159,9 @@ export default function AerospaceProjects() {
                     <div className="absolute inset-0 border-y border-dashed border-slate/20 top-1/2 -z-10 hidden md:block" />
 
                     {[
-                        { label: "Aircraft Design", desc: "Aerodynamic stability & structural modeling" },
-                        { label: "Propulsion", desc: "Thermodynamic cycles & thrust optimization" },
-                        { label: "Space Systems", desc: "Orbital mechanics & extreme environments" }
+                        { label: "Core Expertise Area 1", desc: "Detailed breakdown of specific theoretical sub-skills." },
+                        { label: "Core Expertise Area 2", desc: "Description of application logic and advanced systems." },
+                        { label: "Core Expertise Area 3", desc: "Focus on extreme parameter environments and scale." }
                     ].map((item, i) => (
                         <motion.div
                             key={i}
@@ -185,20 +183,20 @@ export default function AerospaceProjects() {
                 {/* Projects Timeline style */}
                 <div className="ml-2 md:ml-8 mt-12">
                     <ProjectCard
-                        title="Solid Rocket Motor Casing Stress Analysis"
-                        description="FEA simulation of a composite motor casing under maximum expected operating pressure (MEOP). Focus on weight reduction and burst-pressure failure prediction using ANSYS."
+                        title="Project Alpha Demonstration"
+                        description="Simulation of a high-pressure component under maximum expected load constraints. Focus on efficiency and failure prediction."
                         icon={AlertCircle}
                         delay={0.1}
                     />
                     <ProjectCard
-                        title="Converging-Diverging Nozzle Flow Optimization"
-                        description="1D and 2D compressible flow analysis using MATLAB to optimize the thrust coefficient for a suborbital payload."
+                        title="Project Beta Optimization"
+                        description="1D and 2D flow analysis using computational tools to optimize the functional coefficient for a target environment."
                         icon={Maximize}
                         delay={0.2}
                     />
                     <ProjectCard
-                        title="1U CubeSat Deployment Mechanism"
-                        description="Kinematic design and CAD modeling of a spring-loaded deployment system, tested virtually for high-vibration launch environments."
+                        title="Project Gamma Deployment Mechanism"
+                        description="Kinematic design and CAD modeling of a heavily-loaded deployment system, tested virtually for intense vibration conditions."
                         icon={Settings}
                         delay={0.3}
                     />

@@ -18,19 +18,19 @@ export default function AboutContact() {
         const newLines = [...outputLines, `> ${cmd}`];
 
         if (cmd === 'fetch resume') {
-            newLines.push('DOWNLOADING: Krishna_Patel_Resume.pdf...');
+            newLines.push('DOWNLOADING: John_Doe_Resume.pdf...');
             newLines.push('Done. (Check your browser downloads)');
 
             // Trigger fake download
             const link = document.createElement('a');
             link.href = 'data:application/pdf;base64,JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBvYmoKPDwvTGVuZ3RoIDMgMCBSL0ZpbHRlci9GbGF0ZURlY29kZT4+CnN0cmVhbQpHaB...'; // dummy base64
-            link.download = 'Krishna_Patel_Aerospace_Resume.pdf';
+            link.download = 'John_Doe_Resume.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
         } else if (cmd === 'contact') {
-            newLines.push('INITIATING MAIL PROTOCOL -> mailto:kpatel.aero@example.com');
-            // window.location.href = 'mailto:kpatel.aero@example.com';
+            newLines.push('INITIATING MAIL PROTOCOL -> mailto:contact@johndoe.com');
+            // window.location.href = 'mailto:contact@johndoe.com';
         } else {
             newLines.push(`Command not recognized: ${cmd}`);
         }
@@ -130,18 +130,18 @@ export default function AboutContact() {
 
                             <div className="prose prose-invert max-w-none">
                                 <p className="text-slate text-lg leading-relaxed mb-6 font-light">
-                                    I started in mechanical engineering because I wanted to understand how physical systems work. But I quickly realized I wanted to build machines that operate on the absolute edge of physics. That realization pushed me toward aerospace and propulsion systems.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
                                 </p>
                                 <div className="border-l-2 border-orange pl-6 py-2 my-8 bg-orange/5">
                                     <p className="text-off-white text-xl font-medium tracking-wide leading-snug">
-                                        My learning philosophy is straightforward: engineering is just the systematic reduction of human error. It is a constant loop of testing boundaries, failing safely, and modeling a better solution.
+                                        Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci.
                                     </p>
                                 </div>
                                 <p className="text-slate text-lg leading-relaxed mb-6 font-light">
-                                    I don&apos;t just want to design things that fly. I want to understand the deep thermodynamic and structural interactions that allow a vehicle to survive the most hostile environments we know.
+                                    Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer aliquet, nunc id commodo posuere, nulla ex ultrices ipsum, pretium blandit enim ex quis diam.
                                 </p>
                                 <p className="text-cyan font-semibold tracking-wide mt-10">
-                                    If you are working on hard hardware problems, or just want to talk about propulsion systems and simulation parameters, let&apos;s connect.
+                                    Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque, let&apos;s connect.
                                 </p>
                             </div>
                         </div>
@@ -153,10 +153,10 @@ export default function AboutContact() {
             {/* Footer Quote */}
             <footer className="w-full mt-32 border-t border-slate/10 pt-8 pb-12 px-6 text-center bg-black">
                 <p className="text-slate/60 font-mono text-sm max-w-2xl mx-auto italic">
-                    &quot;An expert is just an engineer who has already made all the most common mistakes.&quot;
+                    &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&quot;
                 </p>
                 <div className="mt-8 text-[10px] text-slate/30 uppercase tracking-[0.3em]">
-                    Krishna Patel / Sys.Offline
+                    John Doe / Sys.Offline
                 </div>
             </footer>
         </section>
