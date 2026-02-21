@@ -78,6 +78,7 @@ export default function JournalRoadmap() {
 
                 {/* Right Column: Future Timeline */}
                 <motion.div
+                    id="mission-timeline"
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}

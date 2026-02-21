@@ -137,7 +137,7 @@ const ProjectCard = ({ title, description, icon: Icon, delay }) => (
 
 export default function AerospaceProjects() {
     return (
-        <section className="relative w-full py-24 overflow-hidden">
+        <section id="projects" className="relative w-full py-24 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
                 {/* Section Header */}

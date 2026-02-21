@@ -75,13 +75,19 @@ export default function Hero() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-6">
-                        <button className="hud-focus relative overflow-hidden group px-8 py-3 rounded-full border border-cyan/50 bg-cyan/10 hover:bg-cyan/20 transition-all duration-300">
+                        <button
+                            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="hud-focus relative overflow-hidden group px-8 py-3 rounded-full border border-cyan/50 bg-cyan/10 hover:bg-cyan/20 transition-all duration-300"
+                        >
                             <span className="relative z-10 text-cyan uppercase tracking-widest text-sm font-semibold">
                                 Explore My Work
                             </span>
                             <div className="absolute inset-0 w-full h-full bg-cyan/20 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></div>
                         </button>
-                        <button className="hud-focus px-8 py-3 rounded-full border border-slate/30 text-slate hover:text-off-white hover:border-off-white/50 transition-all duration-300 uppercase tracking-widest text-sm font-semibold">
+                        <button
+                            onClick={() => document.getElementById('mission-timeline')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="hud-focus px-8 py-3 rounded-full border border-slate/30 text-slate hover:text-off-white hover:border-off-white/50 transition-all duration-300 uppercase tracking-widest text-sm font-semibold"
+                        >
                             My Engineering Journey
                         </button>
                     </div>
