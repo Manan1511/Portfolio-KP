@@ -149,7 +149,7 @@ export default function AerospaceProjects() {
                     <h2 className="text-4xl md:text-5xl font-bold text-off-white uppercase tracking-tight">
                         Domain Curiosity <br />
                         <span className="text-slate focus-within:text-off-white transition-colors block mt-2 text-2xl font-light">
-                            Testing boundaries. Failing safely.
+                            Currently in Foundation Phase – Focused on Conceptual Depth & Skill Building
                         </span>
                     </h2>
                 </div>
@@ -159,9 +159,9 @@ export default function AerospaceProjects() {
                     <div className="absolute inset-0 border-y border-dashed border-slate/20 top-1/2 -z-10 hidden md:block" />
 
                     {[
-                        { label: "Core Expertise Area 1", desc: "Detailed breakdown of specific theoretical sub-skills." },
-                        { label: "Core Expertise Area 2", desc: "Description of application logic and advanced systems." },
-                        { label: "Core Expertise Area 3", desc: "Focus on extreme parameter environments and scale." }
+                        { label: "Engineering Mechanics & Structural Logic", desc: "Developing strong intuition for force systems, stress-strain relationships, equilibrium analysis, and mechanical behavior under loading conditions." },
+                        { label: "Thermodynamics & Fluid Flow Foundations", desc: "Building conceptual clarity in energy systems, heat transfer mechanisms, and fluid behavior — key pillars for future aerospace propulsion and aerodynamic systems." },
+                        { label: "Aerospace-Oriented Curiosity", desc: "Deep interest in aircraft structures, propulsion systems, orbital mechanics, and high-performance engineering environments. Actively exploring how mechanical fundamentals translate into aerospace applications." }
                     ].map((item, i) => (
                         <motion.div
                             key={i}
@@ -183,20 +183,20 @@ export default function AerospaceProjects() {
                 {/* Projects Timeline style */}
                 <div className="ml-2 md:ml-8 mt-12">
                     <ProjectCard
-                        title="Project Alpha Demonstration"
-                        description="Simulation of a high-pressure component under maximum expected load constraints. Focus on efficiency and failure prediction."
+                        title="Academic Conceptual Development Phase"
+                        description="Currently focused on mastering first-year mechanical engineering fundamentals to build a strong base before entering applied aerospace research and projects."
                         icon={AlertCircle}
                         delay={0.1}
                     />
                     <ProjectCard
-                        title="Project Beta Optimization"
-                        description="1D and 2D flow analysis using computational tools to optimize the functional coefficient for a target environment."
+                        title="Simulation & Skill Preparation Phase"
+                        description="Learning CAD modeling and computational tools to prepare for future internships and aerospace-oriented technical projects."
                         icon={Maximize}
                         delay={0.2}
                     />
                     <ProjectCard
-                        title="Project Gamma Deployment Mechanism"
-                        description="Kinematic design and CAD modeling of a heavily-loaded deployment system, tested virtually for intense vibration conditions."
+                        title="Technical Exploration & Research Interest"
+                        description="Studying aerospace case studies, aircraft systems, and propulsion concepts independently to align future specialization with Masters-level goals."
                         icon={Settings}
                         delay={0.3}
                     />

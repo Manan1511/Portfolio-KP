@@ -60,19 +60,19 @@ export default function JournalRoadmap() {
                     </div>
 
                     <JournalEntry
-                        date="LOG ENTRY: 094"
-                        title="Investigation Alpha: System Failure"
-                        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                        date="LOG ENTRY: 112 – Direction Defined"
+                        title="Aiming for Aerospace"
+                        content="Decision taken to pursue a Masters in Aerospace Engineering. Realigned academic focus toward thermofluids, structural systems, and advanced mechanics."
                     />
                     <JournalEntry
-                        date="LOG ENTRY: 081"
-                        title="Process Beta: Optimization"
-                        content="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        date="LOG ENTRY: 097 – Foundation Over Speed"
+                        title="Mastering the Basics"
+                        content="Chose depth of understanding over superficial performance. Strengthening math and physics fundamentals for long-term technical excellence."
                     />
                     <JournalEntry
-                        date="LOG ENTRY: 062"
-                        title="Study Gamma: Value vs Output"
-                        content="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+                        date="LOG ENTRY: 083 – Discipline & Leadership"
+                        title="DJS MUNSOC"
+                        content="Balancing academics with organizational responsibilities as a member of DJS MUNSOC to build communication, diplomacy, and structured thinking."
                     />
                 </motion.div>
 
@@ -100,27 +100,33 @@ export default function JournalRoadmap() {
                     <div className="ml-2">
                         <TimelineNode
                             status="completed"
-                            title="Foundation Degree Program"
-                            desc="Built core knowledge base in primary scientific or analytical disciplines."
-                            date="T-MINUS 2 YRS"
+                            title="School Foundation – St. Xavier's Boys Academy"
+                            desc="Built early academic discipline and analytical skills."
+                            date="COMPLETED"
+                        />
+                        <TimelineNode
+                            status="completed"
+                            title="Higher Secondary – Kishinchand Chellaram College"
+                            desc="Completed 12th grade with focus on science stream, strengthening physics and mathematics base."
+                            date="COMPLETED"
                         />
                         <TimelineNode
                             status="in-progress"
-                            title="Advanced Specialization Level"
-                            desc="Focusing on complex system architectures and upper-level applications."
+                            title="Undergraduate Engineering – Dwarkadas J. Sanghvi College of Engineering"
+                            desc="Pursuing B.E. in Mechanical Engineering while building a long-term pathway toward Aerospace specialization. Active Member – DJS MUNSOC (Delegate Affairs / Media & Events Exposure)."
                             date="CURRENT"
                         />
                         <TimelineNode
                             status="future"
-                            title="Primary Engineering Role"
-                            desc="Targeting fast-paced environments focused on aggressive iteration and design."
-                            date="T-PLUS 1 YR"
+                            title="Masters in Aerospace Engineering"
+                            desc="Targeting specialization in Aerospace Engineering with focus on propulsion systems, aerodynamics, and advanced structural analysis."
+                            date="T-PLUS 3-4 YRS"
                         />
                         <TimelineNode
                             status="future"
-                            title="Leadership & Systems Design"
-                            desc="Leading development teams architecting broad-scope integration payloads."
-                            date="T-PLUS 3 YRS"
+                            title="Aerospace Industry Role"
+                            desc="Aspiring to work in high-performance aerospace environments focused on design, optimization, and next-generation engineering systems."
+                            date="T-PLUS 5 YRS"
                         />
                     </div>
                 </motion.div>

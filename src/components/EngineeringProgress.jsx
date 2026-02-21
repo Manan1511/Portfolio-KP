@@ -62,17 +62,17 @@ export default function EngineeringProgress() {
                     </div>
 
                     <SystemMeter
-                        label="Current Status : Developing & Iterating"
-                        value={85}
+                        label="Current Status : Building Core Engineering Fundamentals"
+                        value={90}
                         colorClass={{ text: "text-cyan", bg: "bg-cyan" }}
                     />
                     <SystemMeter
-                        label="Core Focus : Primary Skillset"
-                        value={72}
+                        label="Core Focus : Mechanics, Thermodynamics & Analytical Thinking"
+                        value={78}
                         colorClass={{ text: "text-orange", bg: "bg-orange" }}
                     />
                     <SystemMeter
-                        label="Long-term : Advanced Systems"
+                        label="Long-term : Aerospace Systems & Advanced Propulsion"
                         value={100}
                         colorClass={{ text: "text-off-white", bg: "bg-off-white" }}
                     />
@@ -92,23 +92,23 @@ export default function EngineeringProgress() {
                         <TagDisplay
                             title="Fundamentals"
                             tags={[
-                                "Core Subject A",
-                                "Core Subject B",
-                                "Principle Topic C",
-                                "Advanced Theory D",
-                                "Applied Science E"
+                                "Engineering Mathematics",
+                                "Engineering Mechanics",
+                                "Thermodynamics",
+                                "Fluid Mechanics",
+                                "Strength of Materials"
                             ]}
                         />
 
                         <TagDisplay
                             title="Technical Stack"
                             tags={[
-                                "Primary Tool",
-                                "Secondary Tool",
-                                "Software Stack",
-                                "Language A",
-                                "Language B",
-                                "Framework X"
+                                "SolidWorks (Learning)",
+                                "AutoCAD",
+                                "MATLAB (Learning)",
+                                "Fundamentals of C",
+                                "Python",
+                                "Fundamentals of Java"
                             ]}
                         />
                     </div>

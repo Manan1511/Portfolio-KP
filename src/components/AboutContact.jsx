@@ -18,19 +18,19 @@ export default function AboutContact() {
         const newLines = [...outputLines, `> ${cmd}`];
 
         if (cmd === 'fetch resume') {
-            newLines.push('DOWNLOADING: John_Doe_Resume.pdf...');
+            newLines.push('DOWNLOADING: Krishna_Patel_Resume.pdf...');
             newLines.push('Done. (Check your browser downloads)');
 
             // Trigger fake download
             const link = document.createElement('a');
             link.href = 'data:application/pdf;base64,JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBvYmoKPDwvTGVuZ3RoIDMgMCBSL0ZpbHRlci9GbGF0ZURlY29kZT4+CnN0cmVhbQpHaB...'; // dummy base64
-            link.download = 'John_Doe_Resume.pdf';
+            link.download = 'Krishna_Patel_Resume.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
         } else if (cmd === 'contact') {
-            newLines.push('INITIATING MAIL PROTOCOL -> mailto:contact@johndoe.com');
-            // window.location.href = 'mailto:contact@johndoe.com';
+            newLines.push('INITIATING MAIL PROTOCOL -> mailto:krishnaankitasundeeppatel@gmail.com');
+            // window.location.href = 'mailto:krishnaankitasundeeppatel@gmail.com';
         } else {
             newLines.push(`Command not recognized: ${cmd}`);
         }
@@ -130,18 +130,18 @@ export default function AboutContact() {
 
                             <div className="prose prose-invert max-w-none">
                                 <p className="text-slate text-lg leading-relaxed mb-6 font-light">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
+                                    I am currently building my mechanical engineering foundation with a long-term vision of transitioning into aerospace systems. My approach is structured &mdash; master fundamentals, develop analytical depth, then scale into complex system design.
                                 </p>
                                 <div className="border-l-2 border-orange pl-6 py-2 my-8 bg-orange/5">
                                     <p className="text-off-white text-xl font-medium tracking-wide leading-snug">
-                                        Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci.
+                                        &quot;First build the foundation. Then design the sky.&quot;
                                     </p>
                                 </div>
                                 <p className="text-slate text-lg leading-relaxed mb-6 font-light">
-                                    Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer aliquet, nunc id commodo posuere, nulla ex ultrices ipsum, pretium blandit enim ex quis diam.
+                                    Beyond academics, being part of DJS MUNSOC has strengthened my communication, diplomacy, and leadership abilities &mdash; skills essential for collaborative engineering environments. I aim to combine technical precision with strategic thinking.
                                 </p>
                                 <p className="text-cyan font-semibold tracking-wide mt-10">
-                                    Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque, let&apos;s connect.
+                                    If you believe in building systems that defy limits &mdash; let&apos;s connect.
                                 </p>
                             </div>
                         </div>
@@ -153,10 +153,10 @@ export default function AboutContact() {
             {/* Footer Quote */}
             <footer className="w-full mt-32 border-t border-slate/10 pt-8 pb-12 px-6 text-center bg-black">
                 <p className="text-slate/60 font-mono text-sm max-w-2xl mx-auto italic">
-                    &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&quot;
+                    &quot;Grounded in mechanics. Aiming for the skies.&quot;
                 </p>
                 <div className="mt-8 text-[10px] text-slate/30 uppercase tracking-[0.3em]">
-                    John Doe / Sys.Offline
+                    Krishna Sundeep Patel / Sys.Offline
                 </div>
             </footer>
         </section>
