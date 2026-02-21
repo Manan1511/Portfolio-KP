@@ -48,40 +48,55 @@ const roadmap = [
 
 const JournalRoadmap: React.FC = () => {
     return (
-        <section className="section container" id="journal-roadmap" style={{ position: 'relative' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem' }}>
+        <section className="section hud-container" id="journal-roadmap" style={{ position: 'relative' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '6rem' }}>
 
                 {/* Journal Section */}
                 <motion.div
+                    className="hud-crosshair"
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.6 }}
+                    style={{ paddingLeft: '2rem' }}
                 >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '2rem' }}>
-                        <BookOpen color="var(--color-accent-blue)" size={28} />
-                        <h2 style={{ fontSize: '2.2rem' }}>Journal & Insights</h2>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '3rem' }}>
+                        <BookOpen color="var(--color-accent-blue)" size={28} strokeWidth={1.5} />
+                        <h2 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', fontWeight: 500, letterSpacing: '-0.02em' }}>Log_<br />Entries</h2>
                     </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-                        {blogPosts.map((post) => (
-                            <article key={post.id} style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '2.5rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+                        {blogPosts.map((post, idx) => (
+                            <article
+                                key={post.id}
+                                className="raw-box snappy-hover"
+                                style={{
+                                    paddingBottom: '2rem',
+                                    borderBottom: '1px dotted var(--color-border)',
+                                    marginLeft: idx % 2 === 0 ? '0' : '2rem',
+                                    cursor: 'crosshair'
+                                }}
+                            >
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.8rem', color: 'var(--color-text-muted)', fontSize: '0.9rem', fontFamily: 'var(--font-mono)' }}>
-                                    <span>{post.date}</span>
-                                    <span>•</span>
+                                    <span style={{ color: 'var(--color-accent-blue)' }}>{post.date}</span>
+                                    <span>//</span>
                                     <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                                         <Clock size={14} />
                                         {post.readTime}
                                     </span>
                                 </div>
-                                <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', cursor: 'pointer', transition: 'color 0.2s ease' }} className="hover-text-accent">
+                                <h3 style={{ fontSize: '1.6rem', marginBottom: '1rem', transition: 'color 0.1s ease', fontWeight: 500 }}>
                                     {post.title}
                                 </h3>
-                                <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                                <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7, marginBottom: '1.5rem', fontSize: '1rem' }}>
                                     {post.excerpt}
                                 </p>
-                                <button style={{ color: 'var(--color-accent-blue)', fontWeight: 500, fontSize: '0.95rem' }}>
-                                    Read full entry →
+                                <button style={{
+                                    color: 'var(--color-accent-blue)', fontWeight: 500, fontSize: '0.95rem',
+                                    background: 'transparent', border: 'none', cursor: 'inherit',
+                                    padding: 0, fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px'
+                                }}>
+                                    Read_Full_Entry &gt;
                                 </button>
                             </article>
                         ))}
@@ -90,49 +105,52 @@ const JournalRoadmap: React.FC = () => {
 
                 {/* Roadmap Section */}
                 <motion.div
+                    className="hud-crosshair"
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.6 }}
+                    style={{ paddingLeft: '2rem' }}
                 >
-                    <h2 id="trajectory-map" style={{ fontSize: '2.2rem', marginBottom: '2rem' }}>Trajectory Roadmap</h2>
+                    <h2 id="trajectory-map" style={{ fontSize: '2.5rem', marginBottom: '3rem', fontWeight: 500, letterSpacing: '-0.02em' }}>Trajectory<br />Roadmap</h2>
 
-                    <div style={{ position: 'relative', paddingLeft: '2rem' }}>
-                        {/* Vertical timeline line */}
+                    <div style={{ position: 'relative', paddingLeft: '3rem' }}>
+                        {/* Technical vertical timeline line */}
                         <div style={{
                             position: 'absolute',
                             left: '11px',
-                            top: '10px',
-                            bottom: '10px',
+                            top: '0px',
+                            bottom: '0px',
                             width: '2px',
-                            background: 'linear-gradient(to bottom, var(--color-accent-blue), var(--color-border))'
+                            background: 'repeating-linear-gradient(to bottom, var(--color-accent-blue) 0, var(--color-accent-blue) 10px, transparent 10px, transparent 15px)'
                         }} />
 
                         {roadmap.map((item) => (
-                            <div key={item.id} style={{ position: 'relative', marginBottom: '3rem' }}>
+                            <div key={item.id} className="snappy-hover" style={{ position: 'relative', marginBottom: '3.5rem', cursor: 'crosshair' }}>
                                 {/* Status Indicator */}
-                                <div style={{ position: 'absolute', left: '-2rem', top: '0.2rem', background: 'var(--color-bg)' }}>
-                                    {item.status === 'completed' && <CheckCircle2 size={24} color="var(--color-accent-blue)" />}
+                                <div style={{ position: 'absolute', left: '-3rem', top: '0.2rem', background: 'var(--color-bg)', padding: '4px 0' }}>
+                                    {item.status === 'completed' && <CheckCircle2 size={24} color="var(--color-accent-blue)" strokeWidth={1} />}
                                     {item.status === 'in-progress' && (
                                         <motion.div
-                                            animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
-                                            transition={{ duration: 2, repeat: Infinity }}
+                                            animate={{ opacity: [0.5, 1, 0.5] }}
+                                            transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
                                         >
-                                            <Circle size={24} color="var(--color-accent-orange)" style={{ fill: 'rgba(249, 115, 22, 0.2)' }} />
+                                            <Circle size={24} color="var(--color-accent-orange)" strokeWidth={2} />
                                         </motion.div>
                                     )}
-                                    {item.status === 'upcoming' && <Circle size={24} color="var(--color-text-muted)" />}
+                                    {item.status === 'upcoming' && <Circle size={24} color="var(--color-text-muted)" strokeWidth={1} />}
                                 </div>
 
                                 <div
                                     style={{
-                                        opacity: item.status === 'upcoming' ? 0.5 : 1,
-                                        transform: item.status === 'upcoming' ? 'scale(0.98)' : 'scale(1)',
-                                        transition: 'all 0.3s ease'
+                                        opacity: item.status === 'upcoming' ? 0.4 : 1,
+                                        transition: 'all 0.1s ease',
+                                        borderLeft: item.status === 'in-progress' ? '2px solid var(--color-accent-orange)' : '2px solid transparent',
+                                        paddingLeft: '1rem'
                                     }}
                                 >
-                                    <span style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono)' }}>{item.date}</span>
-                                    <h3 style={{ fontSize: '1.4rem', marginTop: '0.3rem', color: item.status === 'in-progress' ? 'var(--color-accent-orange)' : 'var(--color-text-primary)' }}>
+                                    <span style={{ fontSize: '0.85rem', color: item.status === 'in-progress' ? 'var(--color-accent-orange)' : 'var(--color-text-muted)', fontFamily: 'var(--font-mono)', letterSpacing: '1px' }}>[{item.date}]</span>
+                                    <h3 style={{ fontSize: '1.4rem', marginTop: '0.3rem', fontWeight: 500, color: item.status === 'in-progress' ? 'var(--color-text-primary)' : 'var(--color-text-secondary)' }}>
                                         {item.title}
                                     </h3>
                                 </div>

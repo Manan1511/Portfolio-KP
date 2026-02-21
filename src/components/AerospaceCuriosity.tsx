@@ -46,118 +46,138 @@ const miniProjects = [
 
 const AerospaceCuriosity: React.FC = () => {
     return (
-        <section className="section container" id="explorations">
+        <section className="section hud-container" id="explorations" style={{ paddingLeft: 0, paddingRight: 0 }}>
             <motion.div
+                className="hud-crosshair"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                style={{ marginBottom: '4rem' }}
+                style={{ marginBottom: '5rem', paddingLeft: '2rem' }}
             >
-                <span style={{ color: 'var(--color-accent-blue)', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.85rem' }}>Why Aerospace?</span>
-                <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', marginTop: '0.5rem' }}>Curiosity & Explorations</h2>
-                <p style={{ color: 'var(--color-text-secondary)', maxWidth: '600px' }}>
+                <span style={{ color: 'var(--color-accent-blue)', fontFamily: 'var(--font-mono)', letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.85rem' }}>// INIT: Aerospace Vector</span>
+                <h2 style={{ fontSize: '3rem', margin: '0.5rem 0 1rem 0', fontWeight: 500, letterSpacing: '-0.02em' }}>Curiosity & Explorations</h2>
+                <p style={{ color: 'var(--color-text-secondary)', maxWidth: '600px', fontSize: '1.1rem' }}>
                     My transition into aerospace is driven by a fascination with systems operating at the physical limits of materials and thermodynamics.
                 </p>
             </motion.div>
 
-            {/* Focus Areas */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', marginBottom: '5rem' }}>
+            {/* Focus Areas - Asymmetrical HUD List */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', marginBottom: '8rem', paddingLeft: '2rem' }}>
                 {focusAreas.map((area, idx) => (
                     <motion.div
                         key={area.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        className="raw-box snappy-hover"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: idx * 0.1 }}
+                        transition={{ duration: 0.3, delay: idx * 0.1 }}
                         style={{
-                            padding: '2rem',
-                            border: '1px solid var(--color-border)',
-                            borderRadius: '16px',
-                            background: 'linear-gradient(135deg, rgba(17,17,22,0.8) 0%, rgba(17,17,22,0.2) 100%)',
+                            padding: '1rem 0 1rem 1.5rem',
                             position: 'relative',
-                            overflow: 'hidden'
+                            marginLeft: `${idx * 2}rem`,
+                            maxWidth: '600px',
+                            cursor: 'crosshair',
+                            borderLeftColor: idx === 1 ? 'var(--color-accent-orange)' : 'var(--color-accent-blue)'
                         }}
                     >
-                        {/* Blueprint grid background element */}
-                        <div style={{
-                            position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
-                            backgroundSize: '20px 20px',
-                            backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px)',
-                            zIndex: 0, pointerEvents: 'none'
-                        }} />
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+                            <div style={{ opacity: 0.8 }}>{area.icon}</div>
+                            <h3 style={{ fontSize: '1.4rem', fontWeight: 500, fontFamily: 'var(--font-mono)', letterSpacing: '1px', textTransform: 'uppercase' }}>{area.title}</h3>
+                        </div>
+                        <p style={{ color: 'var(--color-text-secondary)', fontSize: '1rem', lineHeight: 1.6 }}>{area.description}</p>
 
-                        <div style={{ position: 'relative', zIndex: 1 }}>
-                            <div style={{ marginBottom: '1.5rem', opacity: 0.8 }}>{area.icon}</div>
-                            <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>{area.title}</h3>
-                            <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem' }}>{area.description}</p>
+                        {/* Technical faint overlay text */}
+                        <div style={{ position: 'absolute', top: '-1rem', right: '-2rem', opacity: 0.05, fontSize: '4rem', fontWeight: 700, pointerEvents: 'none', userSelect: 'none' }}>
+                            0{idx + 1}
                         </div>
                     </motion.div>
                 ))}
             </div>
 
-            {/* Mini Projects Grid */}
-            <h3 id="projects" style={{ fontSize: '1.8rem', marginBottom: '2rem' }}>Mini Projects</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+            {/* Mini Projects Grid - Bleeding images and overlapping text */}
+            <div style={{ paddingLeft: '2rem', paddingRight: '2rem' }}>
+                <h3 id="projects" style={{ fontSize: '2rem', marginBottom: '3rem', fontFamily: 'var(--font-mono)', letterSpacing: '2px', textTransform: 'uppercase' }}>[ Mini_Projects ]</h3>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
                 {miniProjects.map((project, idx) => (
                     <motion.div
                         key={project.id}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: idx * 0.1 }}
-                        whileHover="hover"
+                        transition={{ duration: 0.4 }}
                         style={{
-                            borderRadius: '16px',
-                            overflow: 'hidden',
                             position: 'relative',
-                            border: '1px solid var(--color-border)',
-                            cursor: 'pointer',
-                            aspectRatio: '16/10'
+                            width: '100%',
+                            display: 'flex',
+                            flexDirection: idx % 2 === 0 ? 'row' : 'row-reverse',
+                            alignItems: 'center',
+                            justifyContent: 'flex-start'
                         }}
                     >
+                        {/* Bleeding Background Image */}
                         <div
                             style={{
-                                position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+                                width: '80%',
+                                height: '400px',
                                 backgroundImage: `url(${project.image})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
-                                filter: 'grayscale(80%) contrast(1.2)'
+                                filter: 'grayscale(100%) contrast(1.5) opacity(0.4)',
+                                position: 'relative',
+                                marginLeft: idx % 2 === 0 ? '-2rem' : '0',
+                                marginRight: idx % 2 !== 0 ? '-2rem' : '0',
+                                transition: 'filter 0.1s cubic-bezier(0, 0, 0.2, 1)'
                             }}
-                        />
-                        {/* Dark overlay */}
-                        <div style={{
-                            position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
-                            background: 'linear-gradient(to top, rgba(10,10,12,0.9) 0%, rgba(10,10,12,0.3) 100%)',
-                            transition: 'background 0.3s ease'
-                        }} />
-
-                        {/* Hover Content */}
-                        <motion.div
-                            variants={{
-                                hover: { y: 0, opacity: 1 }
-                            }}
-                            initial={{ y: 20, opacity: 0.8 }}
-                            style={{
-                                position: 'absolute', bottom: 0, left: 0, width: '100%', padding: '2rem',
-                                display: 'flex', flexDirection: 'column', gap: '0.5rem'
-                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.filter = 'grayscale(50%) contrast(1.2) opacity(0.8)'}
+                            onMouseLeave={(e) => e.currentTarget.style.filter = 'grayscale(100%) contrast(1.5) opacity(0.4)'}
                         >
-                            <span style={{ fontSize: '0.8rem', color: 'var(--color-accent-blue)', fontFamily: 'var(--font-mono)' }}>{project.category}</span>
-                            <h4 style={{ fontSize: '1.4rem' }}>{project.title}</h4>
-                            <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', marginBottom: '1rem' }}>{project.description}</p>
+                            {/* Mechanical grid overlay on image */}
+                            <div style={{
+                                position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+                                backgroundSize: '10px 10px',
+                                backgroundImage: 'linear-gradient(to right, rgba(59,130,246,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(59,130,246,0.1) 1px, transparent 1px)',
+                                pointerEvents: 'none'
+                            }} />
 
-                            <motion.div
-                                variants={{
-                                    hover: { opacity: 1, x: 0 }
-                                }}
-                                initial={{ opacity: 0, x: -10 }}
-                                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--color-text-primary)' }}
-                            >
-                                <span style={{ fontSize: '0.9rem', fontWeight: 500 }}>View Details</span>
-                                <ExternalLink size={16} />
-                            </motion.div>
-                        </motion.div>
+                            {/* Overlapping Text Container */}
+                            <div style={{
+                                position: 'absolute',
+                                top: '50%',
+                                transform: 'translateY(-50%)',
+                                [idx % 2 === 0 ? 'right' : 'left']: '-10%',
+                                width: '50%',
+                                minWidth: '320px',
+                                background: 'rgba(10, 10, 12, 0.95)',
+                                padding: '2rem',
+                                border: '1px solid var(--color-border)',
+                                borderTop: `2px solid ${idx % 2 === 0 ? 'var(--color-accent-blue)' : 'var(--color-accent-orange)'}`,
+                                zIndex: 10,
+                                pointerEvents: 'auto'
+                            }}>
+                                <span style={{ fontSize: '0.85rem', color: idx % 2 === 0 ? 'var(--color-accent-blue)' : 'var(--color-accent-orange)', fontFamily: 'var(--font-mono)', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                                    {project.category}
+                                </span>
+                                <h4 style={{ fontSize: '1.8rem', margin: '0.5rem 0 1rem 0' }}>{project.title}</h4>
+                                <p style={{ color: 'var(--color-text-secondary)', fontSize: '1rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                                    {project.description}
+                                </p>
+
+                                <button
+                                    className="snappy-hover"
+                                    style={{
+                                        display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--color-text-primary)',
+                                        fontFamily: 'var(--font-mono)', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '1px',
+                                        background: 'transparent', border: 'none', cursor: 'crosshair', padding: 0
+                                    }}
+                                >
+                                    <span>Access Terminal</span>
+                                    <ExternalLink size={16} color={idx % 2 === 0 ? 'var(--color-accent-blue)' : 'var(--color-accent-orange)'} />
+                                </button>
+                            </div>
+                        </div>
                     </motion.div>
                 ))}
             </div>

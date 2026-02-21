@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
 
             {/* Foreground Content */}
             <div
-                className="container"
+                className="hud-container"
                 style={{
                     position: 'relative',
                     zIndex: 1,
