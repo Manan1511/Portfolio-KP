@@ -1,0 +1,26 @@
+﻿
+> temp-app@0.0.0 lint
+> eslint .
+
+
+C:\Users\manan\Downloads\Projects\Krishna Portfolio\src\components\AboutContact.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\manan\Downloads\Projects\Krishna Portfolio\src\components\AerospaceProjects.jsx
+   2:10  error    'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                         no-unused-vars
+   2:18  error    'useMotionValue' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                 no-unused-vars
+   2:34  error    'useTransform' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                   no-unused-vars
+  43:8   warning  React Hook useEffect has a missing dependency: 'handlePointerMove'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  97:50  error    'Icon' is defined but never used                                                                                      no-unused-vars
+
+C:\Users\manan\Downloads\Projects\Krishna Portfolio\src\components\EngineeringProgress.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\manan\Downloads\Projects\Krishna Portfolio\src\components\Hero.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\manan\Downloads\Projects\Krishna Portfolio\src\components\JournalRoadmap.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+Γ£û 9 problems (8 errors, 1 warning)
+

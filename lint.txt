@@ -1,0 +1,17 @@
+
+> temp-app@0.0.0 lint
+> eslint .
+
+Warning: React version not specified in eslint-plugin-react settings. See https://github.com/jsx-eslint/eslint-plugin-react#configuration .
+
+C:\Users\manan\Downloads\Projects\Krishna Portfolio\src\components\AboutContact.jsx
+  141:42   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  144:159  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  156:21   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  156:102  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\manan\Downloads\Projects\Krishna Portfolio\src\components\AerospaceProjects.jsx
+  11:11  warning  The 'handlePointerUp' function makes the dependencies of useEffect Hook (at line 38) change on every render. Move it inside the useEffect callback. Alternatively, wrap the definition of 'handlePointerUp' in its own useCallback() Hook  react-hooks/exhaustive-deps
+
+✖ 5 problems (4 errors, 1 warning)
+

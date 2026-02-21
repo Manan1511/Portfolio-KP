@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deep-space: #0B132B;
+  --color-off-white: #E2E8F0;
+  --color-slate: #94A3B8;
+  --color-cyan: #00D4FF;
+  --color-orange: #FF5722;
+  
+  --font-sans: 'Inter', 'Space Grotesk', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@layer base {
+  html, body {
+    background-color: var(--color-deep-space);
+    color: var(--color-off-white);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  body {
+    /* Blueprint grid background */
+    background-image: 
+      linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center top;
+    background-attachment: fixed;
+  }
+
+  /* Custom Telemetry Scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-deep-space);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-cyan);
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00e5ff;
+    box-shadow: 0 0 8px var(--color-cyan);
+  }
+}
+
+@layer components {
+  .hud-focus:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--color-cyan);
+  }
+}
