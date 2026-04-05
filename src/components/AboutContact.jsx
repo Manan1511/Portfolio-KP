@@ -130,7 +130,10 @@ export default function AboutContact() {
 
                             <div className="prose prose-invert max-w-none">
                                 <p className="text-slate text-lg leading-relaxed mb-6 font-light">
-                                    I am currently building my mechanical engineering foundation with a long-term vision of transitioning into aerospace systems. My approach is structured &mdash; master fundamentals, develop analytical depth, then scale into complex system design.
+                                    First-year Mechanical Engineering student at <span className="text-off-white font-medium">Dwarkadas J. Sanghvi College of Engineering</span> with strong analytical thinking and problem-solving abilities.
+                                </p>
+                                <p className="text-slate text-lg leading-relaxed mb-6 font-light">
+                                    Experienced in teamwork, event coordination, and public speaking through active participation in student initiatives. Passionate about applying engineering concepts to real-world challenges and continuously building technical expertise.
                                 </p>
                                 <div className="border-l-2 border-orange pl-6 py-2 my-8 bg-orange/5">
                                     <p className="text-off-white text-xl font-medium tracking-wide leading-snug">
@@ -138,11 +141,40 @@ export default function AboutContact() {
                                     </p>
                                 </div>
                                 <p className="text-slate text-lg leading-relaxed mb-6 font-light">
-                                    Beyond academics, being part of DJS MUNSOC has strengthened my communication, diplomacy, and leadership abilities &mdash; skills essential for collaborative engineering environments. I aim to combine technical precision with strategic thinking.
+                                    Beyond academics, organizing the Youth Summit with DJ MUNSOC and volunteering at the IIC Innovation Council has strengthened my communication, leadership, and event management abilities &mdash; skills essential for collaborative engineering environments.
                                 </p>
                                 <p className="text-cyan font-semibold tracking-wide mt-10">
                                     If you believe in building systems that defy limits &mdash; let&apos;s connect.
                                 </p>
+                            </div>
+
+                            {/* Extracurriculars & Interests */}
+                            <div className="mt-12 pt-8 border-t border-slate/20">
+                                <h3 className="text-sm text-orange uppercase tracking-widest font-semibold mb-6">Extracurriculars & Interests</h3>
+                                <div className="flex flex-wrap gap-3">
+                                    {[
+                                        { emoji: "🎸", label: "Guitar", sub: "Consistency & creative discipline" },
+                                        { emoji: "📱", label: "Content Creation", sub: "LinkedIn & Reels" },
+                                        { emoji: "✈️", label: "Traveling & Exploring", sub: "Adaptability & curiosity" },
+                                        { emoji: "📚", label: "Self-Development Books", sub: "" },
+                                        { emoji: "🤝", label: "Event Volunteering", sub: "" }
+                                    ].map((item, i) => (
+                                        <div
+                                            key={i}
+                                            className="px-4 py-2 border border-slate/30 bg-deep-space hover:border-cyan/50 hover:bg-cyan/5 transition-all duration-300 group cursor-default"
+                                        >
+                                            <span className="mr-2">{item.emoji}</span>
+                                            <span className="text-off-white/80 text-xs font-mono uppercase tracking-wide group-hover:text-cyan transition-colors">
+                                                {item.label}
+                                            </span>
+                                            {item.sub && (
+                                                <span className="text-slate/50 text-[10px] font-mono ml-2 hidden sm:inline">
+                                                    ({item.sub})
+                                                </span>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </motion.div>

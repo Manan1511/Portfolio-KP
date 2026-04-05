@@ -744,6 +744,7 @@ export default function RocketShowcase() {
   const [telemetry, setTelemetry] = useState({ alt: 0, sec: 0 });
   const launchRef = useRef({ launching: false, progress: 0 });
   const animRef = useRef(null);
+  const [resetKey, setResetKey] = useState(0);
 
   const startLaunch = useCallback(() => {
     if (isLaunching || launched) return;
@@ -791,6 +792,7 @@ export default function RocketShowcase() {
     setLaunchProgress(0);
     setTelemetry({ alt: 0, sec: 0 });
     launchRef.current = { launching: false, progress: 0 };
+    setResetKey((k) => k + 1);
   }, []);
 
   // Keyboard controls
@@ -842,6 +844,7 @@ export default function RocketShowcase() {
       {/* 3D Canvas */}
       <div className="absolute inset-0 z-0">
         <Canvas
+          key={resetKey}
           shadows
           camera={{ position: [6, 4, 12], fov: 45, near: 0.1, far: 500 }}
           gl={{

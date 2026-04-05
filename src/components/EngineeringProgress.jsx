@@ -85,7 +85,7 @@ export default function EngineeringProgress() {
                     viewport={{ once: true }}
                     className="lg:col-span-6 lg:col-start-7 lg:-mt-12"
                 >
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 relative z-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
                         {/* Background design element */}
                         <div className="absolute -inset-4 border border-slate/10 -z-10 bg-deep-space/50 backdrop-blur-sm" />
 
@@ -103,12 +103,25 @@ export default function EngineeringProgress() {
                         <TagDisplay
                             title="Technical Stack"
                             tags={[
-                                "SolidWorks (Learning)",
+                                "C Programming",
+                                "Java Programming",
+                                "Object-Oriented Programming (OOP)",
                                 "AutoCAD",
+                                "SolidWorks (Learning)",
                                 "MATLAB (Learning)",
-                                "Fundamentals of C",
-                                "Python",
-                                "Fundamentals of Java"
+                                "Python"
+                            ]}
+                        />
+
+                        <TagDisplay
+                            title="Core Skills"
+                            tags={[
+                                "Problem Solving",
+                                "Leadership",
+                                "Public Speaking",
+                                "Team Collaboration",
+                                "Analytical Thinking",
+                                "Event Management"
                             ]}
                         />
                     </div>

@@ -60,19 +60,19 @@ export default function JournalRoadmap() {
                     </div>
 
                     <JournalEntry
-                        date="LOG ENTRY: 112 – Direction Defined"
-                        title="Aiming for Aerospace"
-                        content="Decision taken to pursue a Masters in Aerospace Engineering. Realigned academic focus toward thermofluids, structural systems, and advanced mechanics."
+                        date="LOG ENTRY: 112 – Hands-On Aerospace"
+                        title="F62 Plane — DJS Skylark Competition"
+                        content="Competed in the DJS Skylark aeromodelling competition, designing and building an F62 model aircraft. First real hands-on aerospace experience — applying aerodynamic principles, structural design, and fabrication skills under competitive pressure."
                     />
                     <JournalEntry
-                        date="LOG ENTRY: 097 – Foundation Over Speed"
-                        title="Mastering the Basics"
-                        content="Chose depth of understanding over superficial performance. Strengthening math and physics fundamentals for long-term technical excellence."
+                        date="LOG ENTRY: 097 – Leadership & Coordination"
+                        title="Youth Summit — DJ MUNSOC"
+                        content="Coordinated and supported planning & execution of a large-scale student event as Associate Team Member. Managed cross-functional teams to ensure smooth operations. Developed leadership, teamwork, and time management skills."
                     />
                     <JournalEntry
-                        date="LOG ENTRY: 083 – Discipline & Leadership"
-                        title="DJS MUNSOC"
-                        content="Balancing academics with organizational responsibilities as a member of DJS MUNSOC to build communication, diplomacy, and structured thinking."
+                        date="LOG ENTRY: 083 – Innovation & Volunteering"
+                        title="IIC Innovation Council"
+                        content="Volunteered in the institution's Innovation Council (IIC) event, contributing to its successful execution at the college level. Demonstrated teamwork and event management skills through active participation in first-year college initiatives."
                     />
                 </motion.div>
 
@@ -102,19 +102,19 @@ export default function JournalRoadmap() {
                             status="completed"
                             title="School Foundation – St. Xavier's Boys Academy"
                             desc="Built early academic discipline and analytical skills."
-                            date="COMPLETED"
+                            date="2012 – 2023"
                         />
                         <TimelineNode
                             status="completed"
-                            title="Higher Secondary – Kishinchand Chellaram College"
+                            title="Higher Secondary – KC College (Junior College)"
                             desc="Completed 12th grade with focus on science stream, strengthening physics and mathematics base."
-                            date="COMPLETED"
+                            date="2023 – 2025"
                         />
                         <TimelineNode
                             status="in-progress"
-                            title="Undergraduate Engineering – Dwarkadas J. Sanghvi College of Engineering"
-                            desc="Pursuing B.E. in Mechanical Engineering while building a long-term pathway toward Aerospace specialization. Active Member – DJS MUNSOC (Delegate Affairs / Media & Events Exposure)."
-                            date="CURRENT"
+                            title="B.Tech – Dwarkadas J. Sanghvi College of Engineering"
+                            desc="Pursuing B.Tech in Mechanical Engineering while building a long-term pathway toward Aerospace specialization. Associate Team Member – DJS MUNSOC Youth Summit."
+                            date="2025 – PRESENT"
                         />
                         <TimelineNode
                             status="future"

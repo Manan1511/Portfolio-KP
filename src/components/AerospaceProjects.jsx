@@ -1,106 +1,8 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Settings, Maximize, AlertCircle } from 'lucide-react';
+import { Settings, Maximize, Plane, Wrench } from 'lucide-react';
 
-// Image Comparison Slider Component for Exploded View
-const ExplodedViewSlider = () => {
-    const [sliderPosition, setSliderPosition] = useState(50);
-    const containerRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-
-    const handlePointerUp = useCallback(() => setIsDragging(false), []);
-
-    useEffect(() => {
-        const handleMove = (clientX) => {
-            if (!containerRef.current) return;
-            const rect = containerRef.current.getBoundingClientRect();
-            const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
-            const percentage = (x / rect.width) * 100;
-            setSliderPosition(percentage);
-        };
-
-        const handlePointerMove = (e) => {
-            if (!isDragging) return;
-            handleMove(e.clientX || e.touches[0].clientX);
-        };
-
-        if (isDragging) {
-            window.addEventListener('pointermove', handlePointerMove);
-            window.addEventListener('pointerup', handlePointerUp);
-        } else {
-            window.removeEventListener('pointermove', handlePointerMove);
-            window.removeEventListener('pointerup', handlePointerUp);
-        }
-        return () => {
-            window.removeEventListener('pointermove', handlePointerMove);
-            window.removeEventListener('pointerup', handlePointerUp);
-        };
-    }, [isDragging, containerRef, setSliderPosition, handlePointerUp]); // Added handlePointerUp to dependencies
-
-    const handlePointerDown = (e) => {
-        setIsDragging(true);
-        // Call handleMove directly here, as it's now defined within the effect and not directly accessible outside.
-        // However, the original handleMove was outside. Let's keep the original logic for handlePointerDown
-        // and ensure handleMove is accessible or refactor handlePointerDown into the effect as well.
-        // For now, let's re-introduce a local handleMove for handlePointerDown.
-        if (!containerRef.current) return;
-        const rect = containerRef.current.getBoundingClientRect();
-        const x = Math.max(0, Math.min((e.clientX || e.touches[0].clientX) - rect.left, rect.width));
-        const percentage = (x / rect.width) * 100;
-        setSliderPosition(percentage);
-    };
-
-    return (
-        <div
-            className="relative w-full aspect-video bg-black/50 overflow-hidden cursor-ew-resize select-none border border-cyan/20 group hover:border-cyan/50 transition-colors"
-            ref={containerRef}
-            onPointerDown={handlePointerDown}
-        >
-            {/* Background: Exploded View (Blueprint) */}
-            <div className="absolute inset-0 bg-[#0f172a] flex items-center justify-center">
-                <img
-                    src="/assets/exploded.png"
-                    alt="Exploded Assembly Blueprint"
-                    className="w-full h-full object-cover object-center opacity-90 mix-blend-screen pointer-events-none"
-                    draggable="false"
-                />
-            </div>
-
-            {/* Foreground: Assembled View (Render) */}
-            <div
-                className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
-            >
-                <img
-                    src="/assets/assembled.png"
-                    alt="Assembled Hardware State"
-                    className="w-full h-full object-cover object-center pointer-events-none"
-                    draggable="false"
-                />
-                {/* Border effect since clipPath removes structural borders */}
-                <div className="absolute inset-0 border-r-2 border-cyan shadow-[2px_0_10px_rgba(0,212,255,0.5)] w-full transition-all" />
-            </div>
-
-            {/* Slider Handle */}
-            <div
-                className="absolute top-0 bottom-0 w-1 bg-cyan -ml-[2px] pointer-events-none flex items-center justify-center"
-                style={{ left: `${sliderPosition}%` }}
-            >
-                <div className="w-6 h-12 bg-deep-space border-2 border-cyan rounded-full flex items-center justify-center gap-1 shadow-[0_0_10px_rgba(0,212,255,0.8)]">
-                    <div className="w-0.5 h-3 bg-cyan/50" />
-                    <div className="w-0.5 h-3 bg-cyan/50" />
-                </div>
-            </div>
-
-            {/* Label */}
-            <div className="absolute bottom-4 right-4 bg-deep-space/80 backdrop-blur-sm border border-cyan/30 px-3 py-1 font-mono text-[10px] text-cyan uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                Drag for Exploded View
-            </div>
-        </div>
-    );
-};
-
-const ProjectCard = ({ title, description, icon: Icon, delay }) => (
+const ProjectCard = ({ title, description, tags, icon: Icon, delay }) => (
     <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -120,18 +22,23 @@ const ProjectCard = ({ title, description, icon: Icon, delay }) => (
             </div>
         </div>
 
-        <p className="text-slate text-sm font-sans mb-8 max-w-2xl leading-relaxed">
+        <p className="text-slate text-sm font-sans mb-6 max-w-2xl leading-relaxed">
             {description}
         </p>
 
-        {/* Exploded View Slider Container */}
-        <div className="max-w-3xl mb-6">
-            <ExplodedViewSlider />
-        </div>
-
-        <button className="hud-focus px-6 py-2 rounded-full border border-cyan/30 text-cyan text-xs font-semibold uppercase tracking-widest hover:bg-cyan/10 transition-colors">
-            View Details
-        </button>
+        {/* Tech tags */}
+        {tags && tags.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-6">
+                {tags.map((tag, i) => (
+                    <span
+                        key={i}
+                        className="px-3 py-1 text-[10px] font-mono text-cyan/80 border border-cyan/20 bg-cyan/5 uppercase tracking-widest hover:border-cyan/50 transition-colors"
+                    >
+                        {tag}
+                    </span>
+                ))}
+            </div>
+        )}
     </motion.div>
 );
 
@@ -144,12 +51,12 @@ export default function AerospaceProjects() {
                 <div className="mb-20">
                     <div className="inline-flex items-center gap-2 mb-4">
                         <Settings className="w-4 h-4 text-cyan animate-[spin_4s_linear_infinite]" />
-                        <span className="text-cyan font-mono text-xs uppercase tracking-[0.2em]">R&D / Mini Projects</span>
+                        <span className="text-cyan font-mono text-xs uppercase tracking-[0.2em]">R&D / Projects</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold text-off-white uppercase tracking-tight">
                         Domain Curiosity <br />
                         <span className="text-slate focus-within:text-off-white transition-colors block mt-2 text-2xl font-light">
-                            Currently in Foundation Phase – Focused on Conceptual Depth & Skill Building
+                            Building Hands-On Experience Through Competitions & Coursework
                         </span>
                     </h2>
                 </div>
@@ -180,24 +87,27 @@ export default function AerospaceProjects() {
                     ))}
                 </div>
 
-                {/* Projects Timeline style */}
+                {/* Projects Timeline */}
                 <div className="ml-2 md:ml-8 mt-12">
                     <ProjectCard
-                        title="Academic Conceptual Development Phase"
-                        description="Currently focused on mastering first-year mechanical engineering fundamentals to build a strong base before entering applied aerospace research and projects."
-                        icon={AlertCircle}
+                        title="F62 Plane — DJS Skylark Aeromodelling Competition"
+                        description="Designed and built an F62 model aircraft for a competitive aeromodelling event organized by DJS Skylark. Applied aerodynamic principles, structural design, and hands-on fabrication skills under competitive pressure. First real aerospace engineering experience bridging theoretical knowledge with practical application."
+                        tags={["Aerodynamics", "Structural Design", "Fabrication", "Competition"]}
+                        icon={Plane}
                         delay={0.1}
                     />
                     <ProjectCard
-                        title="Simulation & Skill Preparation Phase"
-                        description="Learning CAD modeling and computational tools to prepare for future internships and aerospace-oriented technical projects."
-                        icon={Maximize}
+                        title="Gear Assembly Design & Simulation"
+                        description="Designed and simulated a functional gear assembly demonstrating core engineering principles. Collaborated in a team to solve design challenges and optimize system functionality. Enhanced problem-solving skills and hands-on engineering experience."
+                        tags={["Mechanical Design", "Simulation", "Team Collaboration", "CAD"]}
+                        icon={Wrench}
                         delay={0.2}
                     />
                     <ProjectCard
-                        title="Technical Exploration & Research Interest"
-                        description="Studying aerospace case studies, aircraft systems, and propulsion concepts independently to align future specialization with Masters-level goals."
-                        icon={Settings}
+                        title="Technical Exploration & Skill Building"
+                        description="Actively learning CAD tools (SolidWorks, AutoCAD), computational platforms (MATLAB, Python), and programming languages (C, Java) to prepare for future research projects and aerospace-oriented technical work."
+                        tags={["SolidWorks", "AutoCAD", "C Programming", "Java", "MATLAB"]}
+                        icon={Maximize}
                         delay={0.3}
                     />
                 </div>
